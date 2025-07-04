@@ -59,7 +59,60 @@
         display: flex;
         color: var(--text-dark);
     }
+     .dashboard-title {
+  /* Typography */
+  font-family: 'Segoe UI', system-ui, sans-serif;
+  font-weight: 700;
+  font-size: 3.5rem;
+  letter-spacing: -0.03em;
+  line-height: 1.1;
+  text-transform: uppercase;
+  font-variation-settings: 'wght' 700, 'wdth' 85;
+  
+  /* 3D Text Effect */
+  text-shadow: 
+    1px 1px 1px rgba(0,0,0,0.1),
+    0px 1px 0.5px rgba(255,255,255,0.8),
+    0px -1px 0.5px rgba(0,0,0,0.05),
+    -1px 0px 0.5px rgba(0,0,0,0.05);
+  
+  /* Surface Treatment */
+  background: 
+    linear-gradient(135deg, 
+      rgba(255,255,255,0.92) 0%, 
+      rgba(250,250,250,0.92) 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  
+  /* Edge Details */
+  position: relative;
+  display: inline-block;
+  padding: 0.5rem 2rem 0.65rem;
+}
 
+.dashboard-title::before,
+.dashboard-title::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 1px;
+  background: 
+    linear-gradient(90deg, 
+      rgba(0,0,0,0) 0%, 
+      rgba(0,0,0,0.08) 20%, 
+      rgba(0,0,0,0.08) 80%, 
+      rgba(0,0,0,0) 100%);
+  left: 0;
+}
+
+.dashboard-title::before {
+  top: 0;
+}
+
+.dashboard-title::after {
+  bottom: 0;
+}
     /* Sidebar Styles */
     .sidebar {
         width: 260px;
@@ -1015,10 +1068,7 @@
                 <i class="fas fa-bars"></i>
             </button>
             
-            <div class="search-box">
-                <i class="fas fa-search"></i>
-                <input type="text" id="searchInput" placeholder="Search products by name...">
-            </div>
+
             
             <div class="user-controls">
                 <button class="theme-toggle" id="themeToggle">
@@ -1039,6 +1089,10 @@
         </div>
         
         <h1 class="dashboard-title">Product Marketplace</h1>
+           <div class="search-box">
+                <i class="fas fa-search"></i>
+                <input type="text" id="searchInput" placeholder="Search products by name...">
+            </div>
         
         <!-- <div class="stats-container">
             <div class="stat-card">
