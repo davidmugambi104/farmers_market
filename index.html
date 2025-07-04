@@ -3,6 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#D35400" media="(prefers-color-scheme: light)">
+    <meta name="theme-color" content="#E67E22" media="(prefers-color-scheme: dark)">
+    <meta name="theme-color" content="#D35400">
+    <meta name="msapplication-navbutton-color" content="#D35400"> <!-- For legacy Edge/IE -->
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"> <!-- For iOS Safari -->
     <title>FarmCommerce Dashboard</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 <style>
@@ -971,7 +976,14 @@
             grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
         }
     }
-</style>
+        @media (prefers-color-scheme: light) {
+            body { background-color: #D35400; }
+        }
+
+        @media (prefers-color-scheme: dark) {
+            body { background-color: #E67E22; }
+        }
+    </style>
 </head>
 <body>
     <!-- Sidebar -->
