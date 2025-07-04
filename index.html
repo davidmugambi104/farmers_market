@@ -1544,18 +1544,6 @@
             overlay.classList.remove('active');
         }
                 // Mobile toggle functionality
-        document.querySelector('.toggle-sidebar').addEventListener('click', () => {
-            document.querySelector('.sidebar').classList.toggle('active');
-        });
-        
-        document.querySelector('.close-sidebar').addEventListener('click', () => {
-            document.querySelector('.sidebar').classList.remove('active');
-        });
-        
-        // Theme toggle
-        document.querySelector('.theme-toggle').addEventListener('click', () => {
-            document.body.classList.toggle('dark-theme');
-        });
         // Event listeners
         toggleSidebar.addEventListener('click', toggleSidebarVisibility);
         closeSidebar.addEventListener('click', toggleSidebarVisibility);
