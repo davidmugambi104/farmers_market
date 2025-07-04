@@ -59,6 +59,14 @@
             display: flex;
             color: var(--text-dark);
         }
+        /* Small screen configuration (max-width: 768px) */
+        @media (max-width: 768px) {
+            body {
+                flex-direction: column; /* Change the flex direction to column for smaller screens */
+                align-items: center; /* Center the content horizontally */
+                padding: 20px; /* Add some padding for smaller screens */
+            }
+        }
 
         /* Sidebar Styles */
         .sidebar {
@@ -913,6 +921,29 @@
             
             .products-grid {
                 grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            }
+        }
+        /* Small screen configuration (max-width: 768px) */
+        @media (max-width: 768px) {
+            .filter-controls {
+                flex-direction: column; /* Change the flex direction to column for smaller screens */
+            }
+            
+            .filter-group {
+                margin-bottom: 20px; /* Add some margin between filter groups for smaller screens */
+            }
+            
+            .price-range {
+                flex-direction: column; /* Change the flex direction to column for smaller screens */
+            }
+            
+            .price-input {
+                width: 100%; /* Make the price input fields full-width for smaller screens */
+                margin-bottom: 10px; /* Add some margin between price input fields for smaller screens */
+            }
+            
+            .filter-btn {
+                width: 100%; /* Make the filter button full-width for smaller screens */
             }
         }
     </style>
