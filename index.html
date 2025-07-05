@@ -129,10 +129,24 @@
         </div>
         
         <h1 class="dashboard-title">Product Marketplace</h1>
-           <div class="search-box">
-                <i class="fas fa-search"></i>
-                <input type="text" id="searchInput" placeholder="Search products by name...">
-            </div>
+<div class="search-container">
+  <div class="search-box">
+    <input 
+      type="text" 
+      id="searchInput" 
+      placeholder="Search..."
+      aria-label="Search products"
+    >
+    
+    <button 
+      id="searchButton" 
+      class="search-button" 
+      aria-label="Search"
+    >
+      <i class="fas fa-search"></i>
+    </button>
+  </div>
+</div>
         
         <!-- <div class="stats-container">
             <div class="stat-card">
@@ -610,7 +624,16 @@
             overlay.classList.remove('active');
         }
                 // Mobile toggle functionality
+        document.getElementById('searchButton').addEventListener('click', performSearch);
+        document.getElementById('searchInput').addEventListener('keypress', (e) => {
+        if(e.key === 'Enter') performSearch();
+        });
 
+        function performSearch() {
+        const term = document.getElementById('searchInput').value;
+        // Implement search logic here
+        console.log('Searching for:', term);
+        }
         // Event listeners
         toggleSidebar.addEventListener('click', toggleSidebarVisibility);
         closeSidebar.addEventListener('click', toggleSidebarVisibility);
