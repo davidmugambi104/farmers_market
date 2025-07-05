@@ -3,6 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#FF7700" media="(prefers-color-scheme: light)">
+    <meta name="theme-color" content="#E67E22" media="(prefers-color-scheme: dark)">
+    <meta name="theme-color" content="#FF7700">
+    <meta name="msapplication-navbutton-color" content="#FF7700"> <!-- For legacy Edge/IE -->
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <title>Nexus Account Portal</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
@@ -98,21 +103,49 @@
             color: var(--secondary);
         }
 
-        .container {
+        /* .container {
             position: relative;
             z-index: 2;
             width: 90%;
-            max-width: 900px;
+            max-width: 1200px;
             background: var(--glass-bg);
             border-radius: var(--border-radius);
             box-shadow: var(--shadow-lg);
-            padding: 40px;
+            padding: 20px;
             backdrop-filter: blur(12px);
             border: 1px solid var(--glass-border);
             overflow: hidden;
             display: flex;
             transition: var(--transition);
-        }
+        } */
+         html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    overflow: hidden; /* Prevents scroll */
+}
+
+.container {
+    position: relative;
+    z-index: 2;
+    overflow: auto;
+    width: 90%;
+    max-width: 1200px;
+    height: 90vh; /* 100% - 25% = 75% of viewport height */
+    background: var(--glass-bg);
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow-lg);
+    padding: 30px; /* Slightly reduced padding */
+    backdrop-filter: blur(12px);
+    border: 1px solid var(--glass-border);
+    overflow: hidden;
+    display: flex;
+    transition: var(--transition);
+    margin: auto; /* Centers it vertically if parent has full height */
+    top: 0;
+    bottom: 0;
+}
+
 
         .container::before {
             content: '';
@@ -810,17 +843,33 @@
             /* Thousands of lines of CSS would go here in a real project */
             display: none;
         }
+        @media (max-width: 768px) {
+    .welcome-section {
+        display: none;
+    }
+}
     </style>
 </head>
 <body>
     <div class="theme-toggle" id="themeToggle">
-        <i class="fas fa-moon"></i>
+        <i class="fas fa-arrow-left"></i>
     </div>
     
     <canvas id="particles"></canvas>
     
     <div class="container">
         <div class="welcome-section">
+        <video autoplay muted loop playsinline class="background-video">
+            <source src="/watermarked_preview (1).mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+        <!-- Optional overlay content -->
+        <div class="welcome-content">
+            <h1>Welcome!</h1>
+            <p>Experience the future here.</p>
+        </div>
+
+
             <!-- <h1>Welcome to Nexus</h1> -->
             <!-- <p>Join our community of professionals and unlock exclusive features to boost your productivity and collaboration.</p> -->
             
@@ -849,10 +898,10 @@
         </div>
         
         <div class="form-section">
-            <div class="logo">
+            <!-- <div class="logo">
                 <i class="fas fa-infinity"></i>
                 <h1>Nexus Account Portal</h1>
-            </div>
+            </div> -->
             
             <div class="form-container">
                 <div class="form-toggle">
@@ -1007,9 +1056,70 @@
                     <div class="signup-step" id="signupStep4">
                         <div class="terms">
                             <h3>Terms of Service</h3>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam auctor, nisl eget ultricies tincidunt, nisl nisl aliquam nisl, eget ultricies nisl nisl eget nisl. Nullam auctor, nisl eget ultricies tincidunt, nisl nisl aliquam nisl, eget ultricies nisl nisl eget nisl.</p>
-                            <p>Nullam auctor, nisl eget ultricies tincidunt, nisl nisl aliquam nisl, eget ultricies nisl nisl eget nisl. Nullam auctor, nisl eget ultricies tincidunt, nisl nisl aliquam nisl, eget ultricies nisl nisl eget nisl.</p>
-                            <p>Nullam auctor, nisl eget ultricies tincidunt, nisl nisl aliquam nisl, eget ultricies nisl nisl eget nisl. Nullam auctor, nisl eget ultricies tincidunt, nisl nisl aliquam nisl, eget ultricies nisl nisl eget nisl.</p>
+                            <h4>Terms of Service for Farmers Market Place</h4>
+                            <p>By accessing or using the Farmers Market Place website, you agree to be bound by the following terms and conditions.</p>
+                            <p>1. Introduction</p>
+                            <ul>
+                                <li>Farmers Market Place is a platform that allows farmers, producers, and artisans to sell their products directly to consumers.</li>
+                                <li>The website is owned and operated by Farmers Market Place Inc. (the "Company").</li>
+                            </ul>
+                            <p>2. Eligibility</p>
+                            <ul>
+                                <li>You must be at least 18 years old to use the website.</li>
+                                <li>You must provide accurate and complete information when creating an account.</li>
+                            </ul>
+                            <p>3. Account Security</p>
+                            <ul>
+                                <li>You are responsible for maintaining the security of your account and password.</li>
+                                <li>You are responsible for all activities that occur under your account.</li>
+                            </ul>
+                            <p>4. Prohibited Conduct</p>
+                            <ul>
+                                <li>You may not use the website for any illegal or unauthorized purpose.</li>
+                                <li>You may not use the website to violate any laws or regulations.</li>
+                                <li>You may not use the website to harm or exploit any person, including children.</li>
+                            </ul>
+                            <p>5. Intellectual Property</p>
+                            <ul>
+                                <li>The website and its content, including all text, images, and graphics, are the property of the Company.</li>
+                                <li>You may not use, reproduce, modify, display, sell, or distribute any content from the website without the Company's prior written consent.</li>
+                            </ul>
+                            <p>6. Payment Terms</p>
+                            <ul>
+                                <li>All payments are processed through a third-party payment processor.</li>
+                                <li>You are responsible for paying all applicable taxes and fees.</li>
+                            </ul>
+                            <p>7. Shipping</p>
+                            <ul>
+                                <li>The Company is not responsible for any shipping or delivery issues.</li>
+                                <li>You are responsible for ensuring that your products are properly packaged and shipped.</li>
+                            </ul>
+                            <p>8. Refunds and Returns</p>
+                            <ul>
+                                <li>The Company does not offer refunds or returns.</li>
+                                <li>All sales are final.</li>
+                            </ul>
+                            <p>9. Termination</p>
+                            <ul>
+                                <li>The Company may terminate your account at any time, without notice.</li>
+                                <li>You may terminate your account at any time by contacting the Company.</li>
+                            </ul>
+                            <p>10. Governing Law</p>
+                            <ul>
+                                <li>The website and its terms and conditions are governed by the laws of the State of California.</li>
+                                <li>You agree to submit to the jurisdiction of the courts of the State of California.</li>
+                            </ul>
+                            <p>11. Entire Agreement</p>
+                            <ul>
+                                <li>These terms and conditions constitute the entire agreement between you and the Company.</li>
+                                <li>You agree that these terms and conditions supersede any prior or contemporaneous agreements or understandings.</li>
+                            </ul>
+                            <p>12. Changes to Terms and Conditions</p>
+                            <ul>
+                                <li>The Company reserves the right to modify or change these terms and conditions at any time.</li>
+                                <li>You agree to be bound by any changes to these terms and conditions.</li>
+                            </ul>
+                            <p>By using the website, you acknowledge that you have read and agree to these terms and conditions.</p>
                         </div>
                         
                         <div class="checkbox-group">
@@ -1079,19 +1189,11 @@
 
         // Theme toggle
         const themeToggle = document.getElementById('themeToggle');
-        const body = document.body;
-        
+
         themeToggle.addEventListener('click', () => {
-            body.classList.toggle('dark-mode');
-            const icon = themeToggle.querySelector('i');
-            if (body.classList.contains('dark-mode')) {
-                icon.classList.remove('fa-moon');
-                icon.classList.add('fa-sun');
-            } else {
-                icon.classList.remove('fa-sun');
-                icon.classList.add('fa-moon');
-            }
+            window.history.back(); // Go back to the previous page
         });
+
 
         // Multi-step form
         const steps = document.querySelectorAll('.step');
@@ -1332,7 +1434,7 @@
         
         // Create particles
         const particles = [];
-        const particleCount = 150;
+        const particleCount = 80;
         
         for (let i = 0; i < particleCount; i++) {
             particles.push(new Particle());
