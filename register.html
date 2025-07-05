@@ -847,7 +847,137 @@
     .welcome-section {
         display: none;
     }
+}@media (max-width: 480px) {
+    .container {
+        flex-direction: column;
+        padding: 20px;
+        width: 95%;
+        height: auto;
+        overflow-y: auto;
+    }
+
+    .form-section {
+        min-width: unset;
+        width: 100%;
+    }
+
+    .input-group input {
+        padding: 12px 12px 12px 38px;
+        font-size: 14px;
+        border-radius: 8px;
+    }
+
+    .input-group i {
+        font-size: 14px;
+        left: 12px;
+    }
+
+    .form-toggle {
+        flex-direction: column;
+        gap: 10px;
+        padding: 6px;
+        border-radius: 12px;
+    }
+
+    .toggle-btn {
+        padding: 10px;
+        font-size: 14px;
+    }
+
+    .toggle-bg {
+        display: none; /* Optional: hide animated background if it overlaps */
+    }
+
+    .btn {
+        padding: 12px;
+        font-size: 14px;
+        border-radius: 8px;
+    }
+
+    .form-nav {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .nav-btn {
+        width: 100%;
+        padding: 12px;
+        font-size: 14px;
+    }
+
+    .avatar-selection {
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+
+    .avatar-option {
+        width: 60px;
+        height: 60px;
+    }
+
+    .terms {
+        font-size: 13px;
+        padding: 10px;
+    }
+
+    .footer {
+        font-size: 13px;
+        margin-top: 20px;
+    }
+
+    .social-login {
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+
+    .social-btn {
+        width: 44px;
+        height: 44px;
+        font-size: 18px;
+    }
+
+    .logo h1 {
+        font-size: 22px;
+    }
+
+    .form-container {
+        width: 100%;
+    }
+
+    .remember label {
+        font-size: 13px;
+    }
+
+    .step {
+        width: 30px;
+        height: 30px;
+        font-size: 13px;
+    }
+
+    .form-steps::before {
+        top: 15px;
+    }
+
+    .forgot-password a {
+        font-size: 13px;
+    }
+
+    .notification {
+        right: 15px;
+        top: 15px;
+        padding: 10px 15px;
+        font-size: 13px;
+    }
+
+    .notification i {
+        font-size: 16px;
+    }
+
+    .welcome-section {
+        display: none !important;
+    }
 }
+
     </style>
 </head>
 <body>
