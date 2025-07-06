@@ -76,11 +76,7 @@
             --border: #374151;
             --shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
         }
-        @media (prefers-color-scheme: dark) {
-        :root {
-            --theme-color: #60a5fa; /* override for dark mode */
-        }
-        }
+
         body {
             background-color: var(--page-bg);
             min-height: 100vh;
@@ -1134,13 +1130,11 @@
             }
         }
         
-        /* @media (prefers-color-scheme: light) {
-            body { background-color: #FF7700; }
-        }
-
         @media (prefers-color-scheme: dark) {
-            body { background-color: #E67E22; } */
-        /* } */
+        :root {
+            --theme-color: #60a5fa; /* override for dark mode */
+        }
+        }
     </style>
 </head>
 <body>
