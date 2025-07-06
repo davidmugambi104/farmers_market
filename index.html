@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="theme-color" content="#FF7700" media="(prefers-color-scheme: light)">
-    <meta name="theme-color" content="#E67E22" media="(prefers-color-scheme: dark)">
-    <meta name="theme-color" content="#FF7700">
+    <meta name="theme-color" content="#60a5fa" media="(prefers-color-scheme: dark)">
+    <!-- <meta name="theme-color" content="#FF7700"> -->
     <meta name="msapplication-navbutton-color" content="#FF7700">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <title>FarmCommerce Dashboard</title>
@@ -47,7 +47,9 @@
             /* ===== UI ELEMENTS ===== */
             --border: #e2e8f0;
             --shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            --theme-color: #FF7700;
         }
+        
 
         .dark-theme {
             /* ===== CORE COLORS (Updated) ===== */
@@ -74,9 +76,13 @@
             --border: #374151;
             --shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
         }
-
+        @media (prefers-color-scheme: dark) {
+        :root {
+            --theme-color: #60a5fa; /* override for dark mode */
+        }
+        }
         body {
-            background: var(--page-bg);
+            background-color: var(--theme-color);
             min-height: 100vh;
             display: flex;
             color: var(--text-dark);
