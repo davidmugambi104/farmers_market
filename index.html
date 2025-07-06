@@ -342,7 +342,71 @@
             document.body.classList.add('dark-theme');
             themeToggle.innerHTML = '<i class="fas fa-sun"></i>';
         }
-        
+        // Spinner functionality
+        const searchInput1 = document.getElementById('searchInput');
+        const searchButton = document.getElementById('searchButton');
+        const searchIcon = searchButton.querySelector('i');
+        const spinner = document.createElement('div');
+        spinner.className = 'spinner';
+        searchButton.appendChild(spinner);
+
+        let typingTimer;
+        const doneTypingInterval = 800; // 800ms after typing stops
+
+        searchInput1.addEventListener('input', function() {
+            // Show spinner when user types
+            spinner.style.display = 'block';
+            searchIcon.style.opacity = '0';
+            
+            // Clear any existing timer
+            clearTimeout(typingTimer);
+            
+            // Set a new timer to hide the spinner after inactivity
+            typingTimer = setTimeout(() => {
+                spinner.style.display = 'none';
+                searchIcon.style.opacity = '1';
+            }, doneTypingInterval);
+        });
+
+        // Handle search button click
+        document.getElementById('searchButton').addEventListener('click', function() {
+            const term = searchInput.value.trim();
+            if (term) {
+                // Show spinner when search is initiated
+                spinner.style.display = 'block';
+                searchIcon.style.opacity = '0';
+                
+                // Perform search
+                handleSearch();
+                
+                // Hide spinner after search completes
+                setTimeout(() => {
+                    spinner.style.display = 'none';
+                    searchIcon.style.opacity = '1';
+                }, 500);
+            }
+        });
+
+        // Handle Enter key in search input
+        searchInput.addEventListener('keypress', function(e) {
+            if (e.key === 'Enter') {
+                const term = searchInput.value.trim();
+                if (term) {
+                    // Show spinner when search is initiated
+                    spinner.style.display = 'block';
+                    searchIcon.style.opacity = '0';
+                    
+                    // Perform search
+                    handleSearch();
+                    
+                    // Hide spinner after search completes
+                    setTimeout(() => {
+                        spinner.style.display = 'none';
+                        searchIcon.style.opacity = '1';
+                    }, 500);
+                }
+            }
+        });
         // Render products
         function renderProducts(productsToRender, container) {
             container.innerHTML = '';
@@ -628,7 +692,7 @@
         document.getElementById('searchInput').addEventListener('keypress', (e) => {
         if(e.key === 'Enter') performSearch();
         });
-
+        
         function performSearch() {
         const term = document.getElementById('searchInput').value;
         // Implement search logic here
