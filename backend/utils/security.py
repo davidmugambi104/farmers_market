@@ -1,7 +1,7 @@
 from functools import wraps
 from flask_jwt_extended import verify_jwt_in_request, get_jwt_identity
 from services.exceptions import AuthError
-from models import User
+from backend.models import User
 def farmer_required(fn):
     """Decorator to require farmer role"""
     @wraps(fn)
