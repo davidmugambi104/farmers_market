@@ -30,6 +30,7 @@ def create_app(config_name='default'):
     bcrypt.init_app(app)
     jwt.init_app(app)
     limiter.init_app(app)
+    cache.init_app(app)
     CORS(app)
     setup_logging(app)
 
